@@ -47,7 +47,7 @@ const addCategoria = (categoria) => {
   const row = document.createElement('tr');
 
   row.innerHTML = `<td class="text-center">${categoria}</td>
-                   <td class="text-center">0</td>`;
+                   <td class="text-center">0€</td>`;
 
   table.appendChild(row);
 
@@ -67,8 +67,8 @@ const addGasto = (fecha, concepto, categoria, cantidad) => {
   row.innerHTML = `<td class="text-center">${fecha}</td>
                    <td class="text-center">${concepto}</td>
                    <td class="text-center">${categoria}</td>
-                   <td class="text-center">${cantidad}</td>
-                   <td class="text-center">${total}</td>`;
+                   <td class="text-center">${cantidad}€</td>
+                   <td class="text-center">${total}€</td>`;
 
   tableGasto.appendChild(row);
 }
@@ -86,7 +86,7 @@ const actualizarCategoriaTotal = (categoria, cantidad) => {
 
   for (let row of rows) {
     if (row.cells[0].innerText === categoria) {
-      row.cells[1].innerText = categoriasTotal[categoria];
+      row.cells[1].innerText = categoriasTotal[categoria] + "€";
       break;
     }
   }
